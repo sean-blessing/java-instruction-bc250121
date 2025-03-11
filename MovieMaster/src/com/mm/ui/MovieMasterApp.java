@@ -1,5 +1,9 @@
 package com.mm.ui;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.mm.db.DAO;
 import com.mm.db.MovieDBDAO;
 import com.mm.model.Movie;
@@ -10,6 +14,7 @@ public class MovieMasterApp {
 	
 	//private static DAO<Movie> movieDAO = new MovieFileDAO();
 	private static DAO<Movie> movieDAO = new MovieDBDAO();
+	private static List<String> ratings = new ArrayList<>(Arrays.asList("G", "PG", "PG-13", "R", "NC-17"));
 
 	public static void main(String[] args) {
 		MyConsole.printHeader("Welcome to MovieMaster App!");
@@ -51,7 +56,7 @@ public class MovieMasterApp {
 		int id = MyConsole.promptInt("Movie ID: ");
 		String title = MyConsole.promptString("Title: ");
 		int year = MyConsole.promptInt("Year: ");
-		String rating = MyConsole.promptString("Rating: ");
+		String rating = MyConsole.promptString("Rating: ", ratings);
 		String director = MyConsole.promptString("Director: ");
 		movieDAO.add(new Movie(id, title, year, rating, director));
 		MyConsole.printLine("Movie added.");

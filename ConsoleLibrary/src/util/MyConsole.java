@@ -18,6 +18,7 @@ public class MyConsole {
             }
             else {
                 printLine("Error - invalid int.");
+                sc.nextLine();
             }
         }
 
@@ -118,7 +119,7 @@ public class MyConsole {
 			if (validValues.contains(str)) {
 				success = true;
 			}
-			if (!success) {
+			else {
 				printLine("Invalid value. Try again.");
 			}
 		}
