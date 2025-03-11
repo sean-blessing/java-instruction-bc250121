@@ -1,14 +1,15 @@
 package com.mm.ui;
 
 import com.mm.db.DAO;
-import com.mm.db.MovieFileDAO;
+import com.mm.db.MovieDBDAO;
 import com.mm.model.Movie;
 
 import util.MyConsole;
 
 public class MovieMasterApp {
 	
-	private static DAO<Movie> movieDAO = new MovieFileDAO();
+	//private static DAO<Movie> movieDAO = new MovieFileDAO();
+	private static DAO<Movie> movieDAO = new MovieDBDAO();
 
 	public static void main(String[] args) {
 		MyConsole.printHeader("Welcome to MovieMaster App!");
